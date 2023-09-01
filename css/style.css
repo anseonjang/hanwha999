@@ -16,7 +16,7 @@ a img { border: none; }
 ======================================================================== */
 #wrap { width: 100%; } 
 #wrap header { width: 100%; height: 100px; line-height: 100px; position: fixed; top: 0; left: 0; z-index: 999; background: rgba(0, 0, 0, 0.2); } 
-#wrap header .innerHeader { width: 1400px; height: 100%;  min-width: 1400px;  /* m0:auto */
+#wrap header .innerHeader { width: 1400px; height: 100%; /* m0:auto */
  margin: 0 auto; display: flex; justify-content: space-between; /* logo, center menu, right menu 가로 정렬 위함 */}
 /* logo */
 #wrap header .innerHeader h1.logo { width: 13%; /* border:1px solid red; */}
@@ -43,22 +43,17 @@ a img { border: none; }
 /* =======================================================================
  1. main visual 
 ======================================================================== */
-#wrap section.main { background: url("../images/vis_1.jpg")no-repeat center/cover;
-                    background-attachment: fixed; /* 스크롤 올려도 배경 고정 */
+#wrap section.main { background: url("../images/vis_1.jpg")no-repeat center/cover; background-attachment: fixed; /* 스크롤 올려도 배경 고정 */
  width: 100%; height: 1000px; position: relative; /* 기준점 */
-  /* 모바일에서 오류 나오지 않게 하는 속성 넣어줌 (반으로 쪼개져보이는현상 생김) */ 
-                     } 
-#wrap section.main .mainTitle { /* 아래 코드는, 전체에서 중앙으로 배치할때 사용 */ position: absolute; top: 50%; left: 50%; 
-                               /* margin-left: -250px; */ transform: translate(-50%, -50%); /* x, y좌표값 위치 조정 */
+  /* 모바일에서 오류 나오지 않게 하는 속성 넣어줌 (반으로 쪼개져보이는현상 생김) */ min-width: 1400px; } 
+#wrap section.main .mainTitle { /* 아래 코드는, 전체에서 중앙으로 배치할때 사용 */ position: absolute; top: 50%; left: 50%; /* margin-left: -250px; */ transform: translate(-50%, -50%); /* x, y좌표값 위치 조정 */
  text-align: center; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* x,y,퍼지는강도, 색*/ letter-spacing: -1px; /* 자간 줄이기 */}
 #wrap section.main .mainTitle h2 { font-size: 47px; margin-bottom: 70px; font-weight: normal; /* 제목 태그는, bold처리가 되므로 이를 해제*/}
 #wrap section.main .mainTitle p { font-size: 25px; margin-bottom: 30px; } 
 /* more btn */
-#wrap section.main .mainTitle a.view { display: block; width: 180px; padding: 8px 0; font-size: 16px; margin: 0 auto;
-                                      border: 2px solid #fff; position: relative; overflow: hidden; /*마스크처리 */
+#wrap section.main .mainTitle a.view { display: block; width: 180px; padding: 8px 0; font-size: 16px; margin: 0 auto; border: 2px solid #fff; position: relative; overflow: hidden; /*마스크처리 */
  border-radius: 40px; } 
-#wrap section.main .mainTitle a.view::before { content: ""; width: 0; height: 100%; position: absolute; top: 0; 
-                                              left: 0; background: rgba(255, 255, 255, 0); transition: .3s; } 
+#wrap section.main .mainTitle a.view::before { content: ""; width: 0; height: 100%; position: absolute; top: 0; left: 0; background: rgba(255, 255, 255, 0); transition: .3s; } 
 #wrap section.main .mainTitle a.view:hover::before,
 #wrap section.main .mainTitle a.view:focus::before { width: 100%; background: rgba(255, 255, 255, 0.4); } 
 /* =======================================================================
