@@ -1,0 +1,165 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css?family=Exo+2|Noto+Sans+KR');
+
+/* reset */
+* { margin: 0; padding: 0; } 
+body { font-size: 14px; font-family: 'Noto Sans KR', 'sans-serif'; } 
+ul,li { margin: 0; padding: 0; list-style: none; } 
+h1,h2,h3,h4,h5,h6 { margin: 0; padding: 0; } 
+a { text-decoration: none; color: inherit; } 
+/* inherit - 부모의 글자색 상속*/
+a img { border: none; } 
+/* 하위버젼 브라우저에 링크걸린 이미지 줄생김 현상 없애기 */
+/* =======================================================================
+ header
+======================================================================== */
+#wrap { width: 100%; } 
+#wrap header { width: 100%; height: 100px; line-height: 100px; position: fixed; top: 0; left: 0; z-index: 999; background: rgba(0, 0, 0, 0.2); } 
+#wrap header .innerHeader { width: 1400px; height: 100%; /* m0:auto */
+ margin: 0 auto; display: flex; justify-content: space-between; /* logo, center menu, right menu 가로 정렬 위함 */}
+/* logo */
+#wrap header .innerHeader h1.logo { width: 13%; /* border:1px solid red; */}
+#wrap header .innerHeader h1.logo img { margin-top: 25px; } 
+/* center menu */
+#wrap header .innerHeader nav.gnb { width: 50%; /* border:1px solid red; */}
+#wrap header .innerHeader nav.gnb ul { width: 100%; display: flex; justify-content: center; gap: 50px; } 
+#wrap header .innerHeader nav.gnb ul li a { display: block; font-size: 16px; color: #fff; /* text-align: center; */}
+#wrap header .innerHeader nav.gnb ul li a:hover,
+#wrap header .innerHeader nav.gnb ul li a:focus { color: #ff8342; } 
+/* right menu */
+#wrap header .innerHeader nav.tnb { width: 37%; /* border:1px solid red; */}
+#wrap header .innerHeader nav.tnb ul { display: flex; justify-content: space-between; } 
+#wrap header .innerHeader nav.tnb ul li a { display: block; font-size: 16px; color: #fff; /* text-align: center; */}
+#wrap header .innerHeader nav.tnb ul li a:hover,
+#wrap header .innerHeader nav.tnb ul li a:focus { color: #ff8342; } 
+/* 제품검색아이콘 */
+#wrap header .innerHeader nav.tnb ul li:nth-child(1) a i,
+#wrap header .innerHeader nav.tnb ul li:nth-child(2) a i { font-size: 20px; margin-right: 5px; } 
+/* 둥근사각형 버튼 */
+#wrap header .innerHeader nav.tnb ul li:last-child a { display: block; border-radius: 30px; margin-top: 35px; border: 1px solid #fff; width: 130px; height: 32px; line-height: 32px; /* height값과 line-height 값을 동일하게 해주면, 수직 중앙정렬 됨 */
+ transition: .3s; /* 0.3초 - transition : 애니메이션 속성 */ text-align: center; } 
+#wrap header .innerHeader nav.tnb ul li:last-child a i { margin-left: 5px; } 
+/* =======================================================================
+ 1. main visual 
+======================================================================== */
+#wrap section.main { background: url("../images/vis_1.jpg")no-repeat center/cover; background-attachment: fixed; /* 스크롤 올려도 배경 고정 */
+ width: 100%; height: 1000px; position: relative; /* 기준점 */
+  /* 모바일에서 오류 나오지 않게 하는 속성 넣어줌 (반으로 쪼개져보이는현상 생김) */ min-width: 1400px; } 
+#wrap section.main .mainTitle { /* 아래 코드는, 전체에서 중앙으로 배치할때 사용 */ position: absolute; top: 50%; left: 50%; /* margin-left: -250px; */ transform: translate(-50%, -50%); /* x, y좌표값 위치 조정 */
+ text-align: center; color: #fff; text-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* x,y,퍼지는강도, 색*/ letter-spacing: -1px; /* 자간 줄이기 */}
+#wrap section.main .mainTitle h2 { font-size: 47px; margin-bottom: 70px; font-weight: normal; /* 제목 태그는, bold처리가 되므로 이를 해제*/}
+#wrap section.main .mainTitle p { font-size: 25px; margin-bottom: 30px; } 
+/* more btn */
+#wrap section.main .mainTitle a.view { display: block; width: 180px; padding: 8px 0; font-size: 16px; margin: 0 auto; border: 2px solid #fff; position: relative; overflow: hidden; /*마스크처리 */
+ border-radius: 40px; } 
+#wrap section.main .mainTitle a.view::before { content: ""; width: 0; height: 100%; position: absolute; top: 0; left: 0; background: rgba(255, 255, 255, 0); transition: .3s; } 
+#wrap section.main .mainTitle a.view:hover::before,
+#wrap section.main .mainTitle a.view:focus::before { width: 100%; background: rgba(255, 255, 255, 0.4); } 
+/* =======================================================================
+ title - 4종 전체 -> about ~ sns 
+======================================================================== */
+.title { font-family: 'Exo 2', sans-serif; color: #000; text-align: center; } 
+.title h2 { font-size: 45px; margin-bottom: 10px; font-weight: normal; } 
+.title h2 span { color: #ff8342; } 
+.title p { color: #555; font-size: 18px; } 
+/* =======================================================================
+ 2. about
+======================================================================== */
+#wrap section.about { width: 100%; background-color: #fff; padding: 80px 0; } 
+#wrap section.about ul { width: 1400px; margin: 50px auto; /* overflow: hidden; */ min-width: 1400px; display: flex; } 
+#wrap section.about ul li { width: 33.3333%; } 
+#wrap section.about ul li a { display: block; } 
+#wrap section.about ul li a p.scale { width: 100%; height: 369px; overflow: hidden; /* 마스크처리 */}
+#wrap section.about ul li a p.scale img { width: 100%; height: auto; transition: .8s; } 
+#wrap section.about ul li a:hover p.scale img { transform: scale(1.2); /* 120% 확대*/}
+/* text */
+#wrap section.about ul li a .text { padding: 30px 0 0 0; } 
+#wrap section.about ul li a .text h3 { font-size: 20px; margin-bottom: 10px; } 
+#wrap section.about ul li a .text p { font-size: 16px; margin-bottom: 10px; } 
+#wrap section.about ul li a .text p.more { font-weight: bold; padding-left: 40px; position: relative; } 
+#wrap section.about ul li a .text p.more:hover { color: rgba(0, 0, 0, 0.5); } 
+/* icon - \f178 - font-family: FontAwesome; \ <- 금액쓸때의 원 표시 */
+#wrap section.about ul li a .text p.more::before { content: '\f178'; width: 30px; height: 30px; line-height: 30px; background-color: #ff8342; font-family: FontAwesome; border-radius: 50%; position: absolute; left: 1px; padding-left: 0.4px; } 
+/* =======================================================================
+ 3. innovation
+======================================================================== */
+#wrap section.innovation { width: 100%; margin-bottom: 150px; } 
+#wrap section.innovation .imgBox { width: 1400px; height: 540px; background: url("../images/product_1.jpg")no-repeat center/cover; position: relative; margin: 50px auto; } 
+#wrap section.innovation .imgBox .inner { position: absolute; left: 50%; bottom: -50px; transform: translateX(-50%); background-color: #3a3c4e; width: 80%; } 
+#wrap section.innovation .imgBox .inner h3 { background-color: #fff; padding: 25px 45px; font-size: 20px; box-sizing: border-box; } 
+#wrap section.innovation .imgBox .inner h3 span { color: #ff8342; } 
+#wrap section.innovation .imgBox .inner .bottom { padding: 35px 85px; color: #fff; line-height: 1.6; /* 행이 있는 여러줄의 내용 행간조절 - 1.6 - 75% 행간*/
+ box-sizing: border-box; overflow: hidden; } 
+/* text */
+#wrap section.innovation .imgBox .inner .bottom p { float: left; margin-left: -5px; font-size: 15px; } 
+/* btn */
+#wrap section.innovation .imgBox .inner .bottom a { float: right; display: block; padding: 7px 30px; background-color: #ff8342; border-radius: 50px; transition: .5s; margin: 7px -10px 0 0; } 
+#wrap section.innovation .imgBox .inner .bottom a:hover,
+#wrap section.innovation .imgBox .inner .bottom a:focus { background-color: #f86010; } 
+/* =======================================================================
+ 4. me - 인재채용
+======================================================================== */
+#wrap section.me { width: 100%; background: url("../images/me.jpg")no-repeat center/cover; position: relative; padding: 80px 0; margin-bottom: 150px; min-width: 1400px; } 
+/* 인재상 리스트 */
+#wrap section.me .list { width: 1400px; margin: 50px auto; border-top: 2px solid #000; } 
+#wrap section.me .list>ul { padding-left: 30px; } 
+#wrap section.me .list>ul>li { padding: 30px 30px 30px 10px; box-sizing: border-box; } 
+#wrap section.me .list>ul>li:nth-child(1) { border-bottom: 1px solid #ddd; } 
+#wrap section.me .list>ul>li h3 { font-size: 18px; margin-top: 20px; position: relative; } 
+#wrap section.me .list>ul>li h3>span { color: #ff8342; position: absolute; left: -25px; } 
+#wrap section.me .list>ul>li>p { line-height: 1.6; margin-bottom: 20px; } 
+/* more btn */
+#wrap section.me .list>ul>li>a.more { display: block; font-weight: bold; position: relative; font-size: 16px; } 
+/* 화살표 아이콘 */
+#wrap section.me .list>ul>li>a span { position: absolute; top: 3px; margin-left: 5px; font-size: 14px; color: #ff8342; } 
+#wrap section.me .list>ul>li>a.more:hover { opacity: 0.7; } 
+#wrap section.me .list>ul>li>a.more:hover span i { opacity: 0.7; } 
+/* 상세리스트 */
+#wrap section.me .list ul.in { margin-bottom: 30px; } 
+#wrap section.me .list ul.in li { margin-bottom: 10px; overflow: hidden; } 
+#wrap section.me .list ul.in li em { float: left; width: 12%; } 
+#wrap section.me .list ul.in li p { float: left; width: 88%; position: relative; } 
+/* 4px 점 */
+#wrap section.me .list ul.in li p::before { content: ' '; position: absolute; top: 10px; left: -40px; width: 4px; height: 4px; background-color: #ff8342; } 
+/* 한화인 채용사이트 버튼 */
+#wrap section.me .button { position: absolute; left: 50%; top: 750px; transform: translate(-50%, -50%); } 
+#wrap section.me .button a { display: block; background-color: #ff8432; padding: 7px 30px; border-radius: 50px; text-align: center; color: #fff; transition: .5s; } 
+#wrap section.me .button a:hover,
+#wrap section.me .button a:focus { background-color: #f86010; } 
+/* =======================================================================
+ 5. sns 
+======================================================================== */
+#wrap section.sns { width: 100%; height: 650px; margin-bottom: 60px; } 
+#wrap section.sns ul { width: 1400px; margin: 50px auto; display: flex; justify-content: space-between; } 
+#wrap section.sns ul li { width: 32.5%; } 
+#wrap section.sns ul li:last-child { margin: 0; } 
+#wrap section.sns ul li a { display: block; width: 100%; height: 100px; } 
+#wrap section.sns ul li a p.ani { width: 100%; height: 251px; overflow: hidden; position: relative; } 
+#wrap section.sns ul li a p.ani:before { content: ''; width: 0; height: 100%; background-color: rgba(255, 131, 66, 0.8); transition: .5s; position: absolute; top: 0; left: 0; } 
+#wrap section.sns ul li a p.ani img { width: 100%; } 
+#wrap section.sns ul li a:hover p.ani:before { width: 100%; } 
+/* blog 글씨 */
+#wrap section.sns ul li a p.ani:after { content: 'BLOG'; opacity: 0; font-family: 'Exo 2', sans-serif; color: #fff; font-size: 15px; border: 1px solid #fff; border-radius: 40px; transition: .5s; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); padding: 5px 30px; } 
+#wrap section.sns ul li a:hover p.ani::after { opacity: 1; /* 투명도 100%*/}/* text */
+#wrap section.sns ul li a .snsBottom { width: 100%; padding: 30px 0 20px 0; box-sizing: border-box; } 
+#wrap section.sns ul li a .snsBottom p.color { color: #ff8342; font-weight: normal; } 
+#wrap section.sns ul li a .snsBottom p { font-weight: bold; font-size: 18px; } 
+#wrap section.sns ul li a .snsBottom p.time { font-weight: normal; font-size: 15px; margin-top: 30px; padding-left: 20px; position: relative; color: #999; } 
+/* 시계아이콘 */
+#wrap section.sns ul li a .snsBottom p.time::before { content: '\f017'; font-family: FontAwesome; font-size: 15px; position: absolute; left: 0; top: 5px; } 
+/* =======================================================================
+ footer
+======================================================================== */
+#wrap footer { width: 100%; border-top: 1px solid #999; padding: 30px 0 50px 0px; box-sizing: border-box;}
+#wrap footer .footerInner { width: 1400px; margin: 0 auto; margin-bottom: 50px; display: flex; justify-content: space-between; } 
+#wrap footer .footerInner .blogo img { margin-top: 10px; } 
+#wrap footer .footerInner .copyright p { color: #333; text-align: center; margin-top: 5px; } 
+#wrap footer .footerInner .copyright p a { color: #ff8342; } 
+#wrap footer .footerInner .copyright p a:hover { color: #999; } 
+#wrap footer .footerInner .blist ul { display: flex; justify-content: space-between; width: 500px; margin-top: -8px; } 
+#wrap footer .footerInner .blist ul li a { color: #333; margin-top: 10px; display: block; font-weight: bold; } 
+#wrap footer .footerInner .blist ul li a:hover { color: #999; } 
+/* 개인정보처리방침 */
+#wrap footer .footerInner .blist ul li:last-child a { color: #ff8342; } 
+#wrap footer .footerInner .blist ul li:last-child a:hover { color: #999; } 
